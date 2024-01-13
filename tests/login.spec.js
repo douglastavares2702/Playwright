@@ -15,6 +15,10 @@ await expect(await page.title()).toBe('Swag Labs');
 await page.locator('[id="user-name"]').fill('standard_user');
 await page.locator('[id="password"]').fill('secret_sauce');
 await page.locator('[data-test="login-button"]').click();
+
+    /// Validate access to the page
+await page.getByText('Sauce Labs');
+
     /// Screenshot when the test finished
 await page.screenshot({path:'todo.png'});
     /// Save to PDF
